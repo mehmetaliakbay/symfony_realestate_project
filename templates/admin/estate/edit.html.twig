@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Estate{% endblock %}
+
+{% block body %}
+    <h1>Edit Estate</h1>
+
+    {{ include('estate/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('estate_index') }}">back to list</a>
+
+    {{ include('estate/_delete_form.html.twig') }}
+{% endblock %}

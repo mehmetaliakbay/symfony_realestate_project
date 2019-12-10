@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Estate index{% endblock %}
+
+{% block body %}
+    <h1>Estate index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Keywords</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Star</th>
+                <th>Adress</th>
+                <th>Phone</th>
+                <th>Fax</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Created_at</th>
+                <th>Updated_at</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for estate in estates %}
+            <tr>
+                <td>{{ estate.id }}</td>
+                <td>{{ estate.title }}</td>
+                <td>{{ estate.keywords }}</td>
+                <td>{{ estate.description }}</td>
+                <td>{{ estate.image }}</td>
+                <td>{{ estate.star }}</td>
+                <td>{{ estate.adress }}</td>
+                <td>{{ estate.phone }}</td>
+                <td>{{ estate.fax }}</td>
+                <td>{{ estate.email }}</td>
+                <td>{{ estate.city }}</td>
+                <td>{{ estate.location }}</td>
+                <td>{{ estate.status }}</td>
+                <td>{{ estate.createdAt ? estate.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ estate.updatedAt ? estate.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('estate_show', {'id': estate.id}) }}">show</a>
+                    <a href="{{ path('estate_edit', {'id': estate.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="16">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('estate_new') }}">Create new</a>
+{% endblock %}

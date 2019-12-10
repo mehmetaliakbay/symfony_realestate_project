@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -55,6 +57,16 @@ class Category
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated_at;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Estate", mappedBy="category")
+     */
+    private $estates;
+
+    public function __construct()
+    {
+        $this->estates = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -153,6 +165,37 @@ class Category
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Estate[]
+     */
+    public function getEstates(): Collection
+    {
+        return $this->estates;
+    }
+
+    public function addEstate(Estate $estate): self
+    {
+        if (!$this->estates->contains($estate)) {
+            $this->estates[] = $estate;
+            $estate->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEstate(Estate $estate): self
+    {
+        if ($this->estates->contains($estate)) {
+            $this->estates->removeElement($estate);
+            // set the owning side to null (unless already changed)
+            if ($estate->getCategory() === $this) {
+                $estate->setCategory(null);
+            }
+        }
 
         return $this;
     }
