@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c68a900-359c-41b7-99f2-b98acb13ee1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/EstateController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Estate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/EstateType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191206161721.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191206162007.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191206165102.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/EstateRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/estate/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/estate/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/estate/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/estate/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/estate/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/estate/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/EstateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/EstateController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EstateType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EstateType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/estate/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/estate/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/estate/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/estate/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/estate/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/estate/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/estate/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/estate/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/estate/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/estate/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/estate/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/estate/show.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +197,8 @@
       <workItem from="1575648127534" duration="4005000" />
       <workItem from="1575968405068" duration="284000" />
       <workItem from="1575969793313" duration="1145000" />
-      <workItem from="1575973879747" duration="4220000" />
+      <workItem from="1575973879747" duration="11038000" />
+      <workItem from="1576067389968" duration="83000" />
     </task>
     <servers />
   </component>

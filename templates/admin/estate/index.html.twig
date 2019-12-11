@@ -1,61 +1,111 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminbase.html.twig' %}
 
 {% block title %}Estate index{% endblock %}
 
 {% block body %}
-    <h1>Estate index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Keywords</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Star</th>
-                <th>Adress</th>
-                <th>Phone</th>
-                <th>Fax</th>
-                <th>Email</th>
-                <th>City</th>
-                <th>Location</th>
-                <th>Status</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for estate in estates %}
-            <tr>
-                <td>{{ estate.id }}</td>
-                <td>{{ estate.title }}</td>
-                <td>{{ estate.keywords }}</td>
-                <td>{{ estate.description }}</td>
-                <td>{{ estate.image }}</td>
-                <td>{{ estate.star }}</td>
-                <td>{{ estate.adress }}</td>
-                <td>{{ estate.phone }}</td>
-                <td>{{ estate.fax }}</td>
-                <td>{{ estate.email }}</td>
-                <td>{{ estate.city }}</td>
-                <td>{{ estate.location }}</td>
-                <td>{{ estate.status }}</td>
-                <td>{{ estate.createdAt ? estate.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ estate.updatedAt ? estate.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('estate_show', {'id': estate.id}) }}">show</a>
-                    <a href="{{ path('estate_edit', {'id': estate.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="16">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Blank Page</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Blank Page</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
 
-    <a href="{{ path('estate_new') }}">Create new</a>
+        <!-- Main content -->
+        <section class="content">
+
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Title</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"
+                                title="Remove">
+                            <i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h1>Estate index</h1>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Category</th>
+                            <th>Title</th>
+                            <th>Keywords</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Star</th>
+                            <th>Adress</th>
+                            <th>Phone</th>
+                            <th>Fax</th>
+                            <th>Email</th>
+                            <th>City</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for estate in estates %}
+                            <tr>
+                                <td>{{ estate.id }}</td>
+                                <td>{{ estate.category }}</td>
+                                <td>{{ estate.title }}</td>
+                                <td>{{ estate.keywords }}</td>
+                                <td>{{ estate.description }}</td>
+                                <td><img src="{{asset('uploads/images/'~estate.image)}}" height="40"></td>
+                                <td>{{ estate.star }}</td>
+                                <td>{{ estate.adress }}</td>
+                                <td>{{ estate.phone }}</td>
+                                <td>{{ estate.fax }}</td>
+                                <td>{{ estate.email }}</td>
+                                <td>{{ estate.city }}</td>
+                                <td>{{ estate.location }}</td>
+                                <td>{{ estate.status }}</td>
+                                <td>
+                                    <a href="{{ path('admin_estate_show', {'id': estate.id}) }}">show</a>
+                                    <a href="{{ path('admin_estate_edit', {'id': estate.id}) }}">edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="16">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <a href="{{ path('admin_estate_new') }}">Create new</a>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    Footer
+                </div>
+                <!-- /.card-footer-->
+            </div>
+            <!-- /.card -->
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
 {% endblock %}

@@ -1,78 +1,129 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminbase.html.twig' %}
 
 {% block title %}Estate{% endblock %}
 
 {% block body %}
-    <h1>Estate</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ estate.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ estate.title }}</td>
-            </tr>
-            <tr>
-                <th>Keywords</th>
-                <td>{{ estate.keywords }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ estate.description }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ estate.image }}</td>
-            </tr>
-            <tr>
-                <th>Star</th>
-                <td>{{ estate.star }}</td>
-            </tr>
-            <tr>
-                <th>Adress</th>
-                <td>{{ estate.adress }}</td>
-            </tr>
-            <tr>
-                <th>Phone</th>
-                <td>{{ estate.phone }}</td>
-            </tr>
-            <tr>
-                <th>Fax</th>
-                <td>{{ estate.fax }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ estate.email }}</td>
-            </tr>
-            <tr>
-                <th>City</th>
-                <td>{{ estate.city }}</td>
-            </tr>
-            <tr>
-                <th>Location</th>
-                <td>{{ estate.location }}</td>
-            </tr>
-            <tr>
-                <th>Status</th>
-                <td>{{ estate.status }}</td>
-            </tr>
-            <tr>
-                <th>Created_at</th>
-                <td>{{ estate.createdAt ? estate.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Updated_at</th>
-                <td>{{ estate.updatedAt ? estate.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Blank Page</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Blank Page</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
 
-    <a href="{{ path('estate_index') }}">back to list</a>
+        <!-- Main content -->
+        <section class="content">
 
-    <a href="{{ path('estate_edit', {'id': estate.id}) }}">edit</a>
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Title</h3>
 
-    {{ include('estate/_delete_form.html.twig') }}
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"
+                                title="Remove">
+                            <i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h1>Estate</h1>
+
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ estate.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td>{{ estate.title }}</td>
+                        </tr>
+                        <tr>
+                            <th>Keywords</th>
+                            <td>{{ estate.keywords }}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>{{ estate.description }}</td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td><img src="{{asset('uploads/images/'~estate.image)}}" height="200" ></td>
+                        </tr>
+                        <tr>
+                            <th>Star</th>
+                            <td>{{ estate.star }}</td>
+                        </tr>
+                        <tr>
+                            <th>Adress</th>
+                            <td>{{ estate.adress }}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td>{{ estate.phone }}</td>
+                        </tr>
+                        <tr>
+                            <th>Fax</th>
+                            <td>{{ estate.fax }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ estate.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>City</th>
+                            <td>{{ estate.city }}</td>
+                        </tr>
+                        <tr>
+                            <th>Location</th>
+                            <td>{{ estate.location }}</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>{{ estate.status }}</td>
+                        </tr>
+                        <tr>
+                            <th>Created_at</th>
+                            <td>{{ estate.createdAt ? estate.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Updated_at</th>
+                            <td>{{ estate.updatedAt ? estate.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <a href="{{ path('admin_estate_index') }}">back to list</a>
+
+                    <a href="{{ path('admin_estate_edit', {'id': estate.id}) }}">edit</a>
+
+                    {{ include('admin/estate/_delete_form.html.twig') }}
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    Footer
+                </div>
+                <!-- /.card-footer-->
+            </div>
+            <!-- /.card -->
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 {% endblock %}
